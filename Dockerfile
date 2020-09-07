@@ -25,8 +25,8 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 #certbot
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot-apache -t stretch-backports && apt-get clean
 
-ARG DOKUWIKI_VERSION=2018-04-22c
-ARG DOKUWIKI_SHA256=78ff97be5714e47d0ddd3531cffb44565c4152c97b2342fe9a0ac2d577bdf8db
+ARG DOKUWIKI_VERSION=2020-07-29
+ARG DOKUWIKI_SHA256=c787d102bc2b647129fce35eb35399dcd7dd5fb10d1c6b3fb113b43a8eb40b60
 ARG DOKUWIKI_URL=https://download.dokuwiki.org/src/dokuwiki/dokuwiki-stable.tgz
 
 RUN curl -L -o dokuwiki.tgz ${DOKUWIKI_URL}\
