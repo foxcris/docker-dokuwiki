@@ -6,8 +6,6 @@ MAINTAINER foxcris
 RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list
 RUN echo 'deb http://deb.debian.org/debian bullseye-updates main' >> /etc/apt/sources.list
 RUN echo 'deb http://security.debian.org/debian-security/ bullseye-security main' >> /etc/apt/sources.list
-#backports fuer certbot
-RUN echo 'deb http://ftp.debian.org/debian bullseye-backports main' >> /etc/apt/sources.list
 
 RUN apt-get update && DEBIAN_FRONTEND=noninteractive apt-get install -y locales && apt-get clean
 RUN sed -i -e 's/# en_US.UTF-8 UTF-8/en_US.UTF-8 UTF-8/' /etc/locale.gen && \
@@ -23,7 +21,7 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 libapache2-mod-php php-xml && apt-get clean
 
 #certbot
-RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot-apache -t stretch-backports && apt-get clean
+RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot-apache && apt-get clean
 
 ARG DOKUWIKI_VERSION=2020-07-29
 ARG DOKUWIKI_SHA256=c787d102bc2b647129fce35eb35399dcd7dd5fb10d1c6b3fb113b43a8eb40b60
