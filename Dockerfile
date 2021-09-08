@@ -5,7 +5,7 @@ MAINTAINER foxcris
 #repositories richtig einrichten
 RUN echo 'deb http://deb.debian.org/debian bullseye main' > /etc/apt/sources.list
 RUN echo 'deb http://deb.debian.org/debian bullseye-updates main' >> /etc/apt/sources.list
-RUN echo 'deb http://security.debian.org bullseye/updates main' >> /etc/apt/sources.list
+deb http://security.debian.org/debian-security/ bullseye-security main >> /etc/apt/sources.list
 #backports fuer certbot
 RUN echo 'deb http://ftp.debian.org/debian bullseye-backports main' >> /etc/apt/sources.list
 
