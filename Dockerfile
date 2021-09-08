@@ -21,7 +21,7 @@ RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-g
 RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y apache2 libapache2-mod-php php-xml && apt-get clean
 
 #certbot
-RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python-certbot-apache && apt-get clean
+RUN apt-get update && apt-get -y upgrade && DEBIAN_FRONTEND=noninteractive apt-get install -y python3-certbot-apache && apt-get clean
 
 ARG DOKUWIKI_VERSION=2020-07-29
 ARG DOKUWIKI_SHA256=c787d102bc2b647129fce35eb35399dcd7dd5fb10d1c6b3fb113b43a8eb40b60
